@@ -1,5 +1,5 @@
 {% set name = "f2" %}
-{% set version = "1.9.1" %}
+{% set version = "2.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ayoisaiah/f2/archive/v{{ version }}.tar.gz
-  sha256: fbeb4540c4afe4aa25565685ee7ef7498449da7fc5f5b70a0e303b15c6e35f71
+  sha256: 8b0776bdbde03041191d5d307a8f5b5aa8e87eb4380fb28f4c15d23975287a30
 
 build:
   number: 0
@@ -19,7 +19,13 @@ requirements:
 
 test:
   commands:
-    - f2 --help
+    - f2 &  # [not win]
+    - exe_pid=$!  # [not win]
+    - trap "kill -SIGTERM ${exe_pid}" SIGTERM  # [not win]
+    - start /b f2   # [win]
+    - if %errorlevel% neq 0 exit %errorlevel%  # [win]
+    - taskkill /F /im f2.exe  # [win]
+    - if %errorlevel% neq 0 exit %errorlevel%  # [win]
 
 about:
   home: https://github.com/ayoisaiah/f2
