@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ayoisaiah/f2/archive/v{{ version }}.tar.gz
-  sha256: 4836a095643117e9a5534193b4d6f55d50602a0c861e9e9480a5d663d6f5e42e
+  sha256: 863d845a33b5b6ab27870b1f7cec7caca43c797d59cf84bace84c12293428355
 
 build:
   number: 0
