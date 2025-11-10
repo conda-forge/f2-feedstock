@@ -1,5 +1,5 @@
 {% set name = "f2" %}
-{% set version = "2.2.1" %}
+{% set version = "2.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ayoisaiah/f2/archive/v{{ version }}.tar.gz
-  sha256: 69e60baeb8e15644088713d7b2fb1e7d23131a92ef5fa61ed4c2c18160078ff1
+  sha256: 0785e40b1fd2adb55165f668dc2635d47559fd7534b0f1da33849f155c4e539b
 
 build:
   number: 0
