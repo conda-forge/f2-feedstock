@@ -1,8 +1,7 @@
-{% set name = "f2" %}
 {% set version = "2.2.2" %}
 
 package:
-  name: {{ name|lower }}
+  name: f2
   version: {{ version }}
 
 source:
@@ -10,7 +9,7 @@ source:
   sha256: 0785e40b1fd2adb55165f668dc2635d47559fd7534b0f1da33849f155c4e539b
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
